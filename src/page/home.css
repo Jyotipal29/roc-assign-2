@@ -1,0 +1,20 @@
+.home-container{
+    max-width: 1200px;
+    margin:20px auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    display: grid;
+    gap:20px;
+    grid-template-columns: 1fr 4fr;
+}
+
+.fil-container{
+    border:1px solid black;
+position: relative;
+}
+.prod-container{
+    border:1px solid black;
+display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+}
