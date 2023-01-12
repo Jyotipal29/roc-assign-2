@@ -1,4 +1,18 @@
 .prod-con{
     display: grid;
+    gap:30;
+    grid-template-columns: repeat(4,1fr);
+}
+
+@media (max-width:1020px) {
+    .prod-con{
+    
     grid-template-columns: repeat(3,1fr);
+}
+}
+@media (max-width:800px) {
+    .prod-con{
+    
+    grid-template-columns: repeat(2,1fr);
+}
 }

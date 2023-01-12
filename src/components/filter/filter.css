@@ -1,3 +1,38 @@
+.filter-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:sticky;
+top:0;
+}
+.fil-heading{
+    font-size: 25px;
+    margin: 10px 0px;
+}
 .container{
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container select{
+    padding:5px 15px;
+    outline: none;
+}
+.container small{
+    font-size: 18px;
+    color:#777;
+}
+
+.fil-btn{
+    width:90%;
+    margin: 0px 10px;
+    padding: 8px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color:#3b82f6 ;
+    color:white;
+    border:none;
+    outline:none;
 }

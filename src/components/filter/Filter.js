@@ -4,7 +4,7 @@ import "./filter.css";
 
 const prices = [
   {
-    label: "None",
+    label: "All",
     value: "",
   },
   {
@@ -83,10 +83,11 @@ const Filter = () => {
 
   return (
     <div className="filter-card">
-      <h2>Filters</h2>
+      <h2 className="fil-heading">Filters</h2>
       <div className="filters">
         <div className="container">
           <small>Sort:</small>
+
           <select value={price} onChange={(e) => setPrice(e.target.value)}>
             {prices.map((item) => (
               <option value={item.value}>{item.label}</option>
@@ -114,17 +115,7 @@ const Filter = () => {
         </div>
         <div className="container">
           <small>Brand:</small>
-          <select
-            value={brand}
-            onChange={
-              (e) => setBrand(e.target.value)
-
-              // productDispatch({
-              //   type: "FILTER_BY_BRAND",
-              //   payload: e.target.value,
-              // })
-            }
-          >
+          <select value={brand} onChange={(e) => setBrand(e.target.value)}>
             {brands.map((item) => (
               <option value={item.value}>{item.label}</option>
             ))}
@@ -132,7 +123,9 @@ const Filter = () => {
         </div>
       </div>
 
-      <button onClick={clearFilters}>clear all</button>
+      <button onClick={clearFilters} className="fil-btn">
+        clear all
+      </button>
     </div>
   );
 };
