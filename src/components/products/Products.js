@@ -6,7 +6,7 @@ const Products = () => {
   const { filteredProducts } = useProduct();
 
   return (
-    <div className="prod-con">
+    <div className="grid grid-cols-12 gap-3 prod-con">
       {filteredProducts.map((product) => (
         <Product item={product} key={product.id} />
       ))}

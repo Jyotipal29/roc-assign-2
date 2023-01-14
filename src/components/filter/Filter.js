@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useProduct } from "../../context/productContext";
+import FilterControl from "../FilterControl";
 import "./filter.css";
 
 const prices = [
@@ -82,49 +83,37 @@ const Filter = () => {
   }
 
   return (
-    <div className="filter-card">
+    <div className="filter-card p-3 gap-3">
       <h2 className="fil-heading">Filters</h2>
-      <div className="filters">
-        <div className="container">
-          <small>Sort:</small>
-
-          <select value={price} onChange={(e) => setPrice(e.target.value)}>
-            {prices.map((item) => (
-              <option value={item.value}>{item.label}</option>
-            ))}
-          </select>
-        </div>
-        <div className="container">
-          <small>Category:</small>
-          <select
-            onChange={(e) => setCategory(e.target.value)}
-            value={category}
-          >
-            {categories.map((item) => (
-              <option value={item.value}>{item.label}</option>
-            ))}
-          </select>
-        </div>
-        <div className="container">
-          <small>Size:</small>
-          <select value={size} onChange={(e) => setSize(e.target.value)}>
-            {sizes.map((item) => (
-              <option value={item.value}>{item.label}</option>
-            ))}
-          </select>
-        </div>
-        <div className="container">
-          <small>Brand:</small>
-          <select value={brand} onChange={(e) => setBrand(e.target.value)}>
-            {brands.map((item) => (
-              <option value={item.value}>{item.label}</option>
-            ))}
-          </select>
-        </div>
+      <div className="filters w-full flex flex-col gap-3">
+        <FilterControl
+          label="Sort"
+          value={price}
+          options={prices}
+          onChange={(e) => setPrice(e.target.value)}
+        />
+        <FilterControl
+          label="Category"
+          value={category}
+          options={categories}
+          onChange={(e) => setCategory(e.target.value)}
+        />
+        <FilterControl
+          label="Size"
+          value={size}
+          options={sizes}
+          onChange={(e) => setSize(e.target.value)}
+        />
+        <FilterControl
+          label="Brand"
+          value={brand}
+          options={brands}
+          onChange={(e) => setBrand(e.target.value)}
+        />
       </div>
 
-      <button onClick={clearFilters} className="fil-btn">
-        clear all
+      <button onClick={clearFilters} className="fil-btn w-full">
+        Clear all
       </button>
     </div>
   );

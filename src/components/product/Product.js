@@ -2,7 +2,7 @@ import React from "react";
 import "./product.css";
 const Product = ({ item }) => {
   return (
-    <div className="prod-card">
+    <div className="col-span-12 sm:col-span-6 lg:col-span-4 prod-card">
       <img src={item.imageUrl} alt="" />
       <div className="prod-details">
         <h3 className="brand">{item.brand}</h3>

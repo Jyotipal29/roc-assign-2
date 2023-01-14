@@ -1,5 +1,30 @@
-*{
-  padding:0;
-  margin:0;
-  box-sizing: border-box;
+:root {
+  --filter-width: 300px;
+  --menu-bar-height: 50px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .toggle-menu {
+    @apply md:hidden bg-transparent color-[#818cf8] text-[18px] my-[20px] mx-[10px] p-[5px];
+  }
+  .menu-bar {
+    @apply w-full sticky top-0 flex justify-between bg-white shadow-lg shadow-black px-3;
+    height: var(--menu-bar-height);
+  }
+
+  .filter-container {
+    @apply max-w-full transition-all duration-300 md:ml-0 fixed md:sticky md:left-0 top-0;
+    width: var(--filter-width);
+    left: calc(var(--filter-width) * -1);
+    height: calc(100vh - var(--menu-bar-height));
+    top: var(--menu-bar-height);
+  }
+
+  .menu-opened .filter-container {
+    @apply left-0;
+  }
 }
