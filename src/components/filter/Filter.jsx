@@ -83,9 +83,9 @@ const Filter = () => {
   }
 
   return (
-    <div className="filter-card p-3 gap-3">
+    <div className="filter-card">
       <h2 className="fil-heading">Filters</h2>
-      <div className="filters w-full flex flex-col gap-3">
+      <div className="filters">
         <FilterControl
           label="Sort"
           value={price}
@@ -112,7 +112,7 @@ const Filter = () => {
         />
       </div>
 
-      <button onClick={clearFilters} className="fil-btn w-full">
+      <button onClick={clearFilters} className="reset-btn">
         Clear all
       </button>
     </div>

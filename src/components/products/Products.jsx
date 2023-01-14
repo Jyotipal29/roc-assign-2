@@ -10,7 +10,9 @@ const Products = () => {
       {filteredProducts.map((product) => (
         <Product item={product} key={product.id} />
       ))}
-      {filteredProducts.length === 0 && "No products found"}
+      {filteredProducts.length === 0 && (
+        <div className="col-span-12 no-result">No products found</div>
+      )}
     </div>
   );
 };

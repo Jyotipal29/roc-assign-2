@@ -1,16 +1,33 @@
-.home-container{
-    display: grid;
-    gap:20px;
-    grid-template-columns: 1fr 4fr;
-    position: relative;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.fil-container{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+@layer components {
+  .toggle-menu {
+    @apply md:hidden bg-transparent text-primary text-[18px] my-[20px] mx-[10px] p-[5px];
+  }
+  .menu-bar {
+    @apply w-full sticky top-0 flex justify-between bg-white shadow-md shadow-[rgba(0,0,0,0.2)] px-3 z-[100];
+    height: var(--menu-bar-height);
+  }
 
-}
-.prod-container{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  .filter-container {
+    @apply max-w-full transition-all duration-300 md:ml-0 fixed md:sticky md:left-0 top-0 w-[var(--filter-width)] md:w-auto;
+    left: calc(var(--filter-width) * -1);
+    height: calc(100vh - var(--menu-bar-height));
+    top: var(--menu-bar-height);
+  }
 
+  .menu-opened .filter-container {
+    @apply left-0;
+  }
 
+  .fil-container {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
+  .prod-container {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
 }

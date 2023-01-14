@@ -18,13 +18,15 @@ import { v4 as uuid } from "uuid";
 function FilterControl({ options, onChange, value, label, id = uuid() }) {
   return (
     <div className="container flex gap-3 border-[1px] border-black">
-      {label && <label for={id}>{label}:</label>}
+      {label && <label htmlFor={id}>{label}:</label>}
       <select id={id} onChange={onChange} value={value}>
         {options.map((item) =>
           typeof item === "string" ? (
-            <option>{item}</option>
+            <option key={item}>{item}</option>
           ) : (
-            <option value={item.value}>{item.label}</option>
+            <option value={item.value} key={item.value}>
+              {item.label}
+            </option>
           )
         )}
       </select>

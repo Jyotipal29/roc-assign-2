@@ -34,7 +34,6 @@ export const ProductProvider = ({ children }) => {
             ? a.price - b.price
             : b.price - a.price
         );
-    console.log(productState.sort, productState.filters, products);
 
     return products
       .filter((product) => {

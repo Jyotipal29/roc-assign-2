@@ -20,10 +20,13 @@ const Home = () => {
         </button>
       </div>
       <div className="grid grid-cols-12 home-container">
-        <div className="filter-container md:col-span-4">
+        <div className="filter-container md:col-span-4 lg:col-span-3">
           <Filter />
         </div>
-        <div className="prod-container col-span-12 md:col-span-8">
+        <div
+          className="prod-container col-span-12 md:col-span-8"
+          onClick={toggleMenu}
+        >
           <Products />
         </div>
       </div>
