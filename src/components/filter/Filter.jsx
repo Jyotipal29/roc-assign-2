@@ -73,7 +73,7 @@ const Filter = () => {
         },
       },
     });
-  }, [price, brand, category, size]);
+  }, [price, brand, category, size]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function clearFilters() {
     setPrice("");
